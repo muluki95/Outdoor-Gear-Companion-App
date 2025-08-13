@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D77BD91C2E4CFC8B003131B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77BD9062E4CFC8A003131B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D77BD90D2E4CFC8A003131B5;
+			remoteInfo = "Outdoor Gear Companion App";
+		};
+		D77BD9262E4CFC8B003131B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77BD9062E4CFC8A003131B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D77BD90D2E4CFC8A003131B5;
+			remoteInfo = "Outdoor Gear Companion App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D77BD90E2E4CFC8A003131B5 /* Outdoor Gear Companion App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Outdoor Gear Companion App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77BD91B2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Outdoor Gear Companion AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77BD9252E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Outdoor Gear Companion AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D77BD9102E4CFC8A003131B5 /* Outdoor Gear Companion App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Outdoor Gear Companion App";
+			sourceTree = "<group>";
+		};
+		D77BD91E2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Outdoor Gear Companion AppTests";
+			sourceTree = "<group>";
+		};
+		D77BD9282E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Outdoor Gear Companion AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D77BD90B2E4CFC8A003131B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9182E4CFC8B003131B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9222E4CFC8B003131B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D77BD9052E4CFC8A003131B5 = {
+			isa = PBXGroup;
+			children = (
+				D77BD9102E4CFC8A003131B5 /* Outdoor Gear Companion App */,
+				D77BD91E2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */,
+				D77BD9282E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */,
+				D77BD90F2E4CFC8A003131B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D77BD90F2E4CFC8A003131B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77BD90E2E4CFC8A003131B5 /* Outdoor Gear Companion App.app */,
+				D77BD91B2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests.xctest */,
+				D77BD9252E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D77BD90D2E4CFC8A003131B5 /* Outdoor Gear Companion App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77BD92F2E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion App" */;
+			buildPhases = (
+				D77BD90A2E4CFC8A003131B5 /* Sources */,
+				D77BD90B2E4CFC8A003131B5 /* Frameworks */,
+				D77BD90C2E4CFC8A003131B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D77BD9102E4CFC8A003131B5 /* Outdoor Gear Companion App */,
+			);
+			name = "Outdoor Gear Companion App";
+			packageProductDependencies = (
+			);
+			productName = "Outdoor Gear Companion App";
+			productReference = D77BD90E2E4CFC8A003131B5 /* Outdoor Gear Companion App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D77BD91A2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77BD9322E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion AppTests" */;
+			buildPhases = (
+				D77BD9172E4CFC8B003131B5 /* Sources */,
+				D77BD9182E4CFC8B003131B5 /* Frameworks */,
+				D77BD9192E4CFC8B003131B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D77BD91D2E4CFC8B003131B5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D77BD91E2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */,
+			);
+			name = "Outdoor Gear Companion AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Outdoor Gear Companion AppTests";
+			productReference = D77BD91B2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D77BD9242E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77BD9352E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion AppUITests" */;
+			buildPhases = (
+				D77BD9212E4CFC8B003131B5 /* Sources */,
+				D77BD9222E4CFC8B003131B5 /* Frameworks */,
+				D77BD9232E4CFC8B003131B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D77BD9272E4CFC8B003131B5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D77BD9282E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */,
+			);
+			name = "Outdoor Gear Companion AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Outdoor Gear Companion AppUITests";
+			productReference = D77BD9252E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D77BD9062E4CFC8A003131B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					D77BD90D2E4CFC8A003131B5 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					D77BD91A2E4CFC8B003131B5 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = D77BD90D2E4CFC8A003131B5;
+					};
+					D77BD9242E4CFC8B003131B5 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = D77BD90D2E4CFC8A003131B5;
+					};
+				};
+			};
+			buildConfigurationList = D77BD9092E4CFC8A003131B5 /* Build configuration list for PBXProject "Outdoor Gear Companion App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D77BD9052E4CFC8A003131B5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D77BD90F2E4CFC8A003131B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D77BD90D2E4CFC8A003131B5 /* Outdoor Gear Companion App */,
+				D77BD91A2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */,
+				D77BD9242E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D77BD90C2E4CFC8A003131B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9192E4CFC8B003131B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9232E4CFC8B003131B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D77BD90A2E4CFC8A003131B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9172E4CFC8B003131B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77BD9212E4CFC8B003131B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D77BD91D2E4CFC8B003131B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D77BD90D2E4CFC8A003131B5 /* Outdoor Gear Companion App */;
+			targetProxy = D77BD91C2E4CFC8B003131B5 /* PBXContainerItemProxy */;
+		};
+		D77BD9272E4CFC8B003131B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D77BD90D2E4CFC8A003131B5 /* Outdoor Gear Companion App */;
+			targetProxy = D77BD9262E4CFC8B003131B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D77BD92D2E4CFC8B003131B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D77BD92E2E4CFC8B003131B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D77BD9302E4CFC8B003131B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D77BD9312E4CFC8B003131B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D77BD9332E4CFC8B003131B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Outdoor Gear Companion App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Outdoor Gear Companion App";
+			};
+			name = Debug;
+		};
+		D77BD9342E4CFC8B003131B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Outdoor Gear Companion App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Outdoor Gear Companion App";
+			};
+			name = Release;
+		};
+		D77BD9362E4CFC8B003131B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Outdoor Gear Companion App";
+			};
+			name = Debug;
+		};
+		D77BD9372E4CFC8B003131B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.esther.Outdoor-Gear-Companion-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Outdoor Gear Companion App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D77BD9092E4CFC8A003131B5 /* Build configuration list for PBXProject "Outdoor Gear Companion App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77BD92D2E4CFC8B003131B5 /* Debug */,
+				D77BD92E2E4CFC8B003131B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77BD92F2E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77BD9302E4CFC8B003131B5 /* Debug */,
+				D77BD9312E4CFC8B003131B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77BD9322E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77BD9332E4CFC8B003131B5 /* Debug */,
+				D77BD9342E4CFC8B003131B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77BD9352E4CFC8B003131B5 /* Build configuration list for PBXNativeTarget "Outdoor Gear Companion AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77BD9362E4CFC8B003131B5 /* Debug */,
+				D77BD9372E4CFC8B003131B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D77BD9062E4CFC8A003131B5 /* Project object */;
+}
