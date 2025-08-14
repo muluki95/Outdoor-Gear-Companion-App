@@ -38,12 +38,7 @@ struct Homepage: View {
                             .font(.headline)
                     }
                     
-                    VStack {
-                        HStack{
-                            Image(systemName:"cart")
-                            Text("Helinox")
-                        }
-                    }
+                    
                 }
                 .padding()
                 .background(Color.gray.opacity(0.2))
