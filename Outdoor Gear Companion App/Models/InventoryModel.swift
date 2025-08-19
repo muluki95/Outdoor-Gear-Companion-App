@@ -9,8 +9,8 @@
 
 
 struct InventoryModel: Codable, Identifiable {
-   // var id = UUID()
-    let image: String
+    var id = UUID()
+    let imageURL: String
     let imageName: String
     let description: String
 }

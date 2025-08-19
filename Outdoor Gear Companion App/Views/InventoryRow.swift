@@ -12,12 +12,12 @@ struct InventoryRow: View {
     var body: some View {
         VStack {
             HStack{
-                ForEach(){ item in
-                    VStack(alignment:.leading{
+                //ForEach(){ item in
+                   // VStack(alignment:.leading{
                         
-                    })
+                   // })
                     
-                }
+               // }
             }
         }
     }
