@@ -9,16 +9,58 @@ import SwiftUI
 
 
 struct InventoryRow: View {
+    
+    let item: Inventory
+    
     var body: some View {
         VStack {
-            HStack{
-                //ForEach(){ item in
-                   // VStack(alignment:.leading{
+            HStack(alignment:.top) {
+                //Image(systemName: "chair")
+                
+                AsyncImage(url: URL(string: item.imageURL)){phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .scaleEffect(0.7)
+                            .tint(.blue)
                         
-                   // })
+                    case .success(let image):
+                       image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(10)
+                    case .failure:
+                        Image(systemName: "photo.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(10)
+                        
+                    @unknown default:
+                       EmptyView()
+                    }
+                }
+                
+                .padding(.trailing, 8)
+                
+                VStack(alignment:.leading, spacing: 4){
                     
-               // }
+                    Text(item.imageName )
+                            .font(.headline)
+                            
+                    Text(item.description)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        
+                    }
+               
+                    
+                }
+            .padding(.vertical)
             }
+        
         }
     }
-}
+
