@@ -10,7 +10,7 @@
 
 struct Inventory: Codable, Identifiable {
     var id: String
-    let imageURL: String
+    let imageURL: String?
     let imageName: String
     let description: String
 }

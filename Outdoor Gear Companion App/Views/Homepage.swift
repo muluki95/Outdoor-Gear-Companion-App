@@ -9,55 +9,49 @@ import SwiftUI
 
 
 struct Homepage: View {
+    
+    @State private var selectedTab = 0
+    
     var body: some View {
-        NavigationStack{
-            VStack{
-                Section {
-                    
-                    Button{
-                        //action
-                    } label: {
+        TabView(selection: $selectedTab) {
+           HomeContent()
+                .tabItem{
+                    VStack{
+                        Image(systemName: selectedTab == 0 ? "house.fill" : "house")
+                        Text("Home")
+                    }
+                }
+                .tag(0)
+            Text("Browse Gear")
+                .tabItem{
+                    VStack{
+                        Image(systemName: "magnifyingglass" )
+                            .foregroundColor( selectedTab == 1 ? .blue : .gray)
                         Text("Browse Gear")
-                            .padding(10)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .frame(width: 300, height: 50)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
                     }
-                    Spacer()
                 }
-                VStack(alignment:.leading){
-                    HStack{
-                        Text("Your Inventory")
-                            .font(.headline)
-                        Spacer()
-                        Image(systemName: "plus")
-                        Text("Add Inventory")
-                            .font(.headline)
+                .tag(1)
+            Text("Product Catalogue")
+                .tabItem{
+                    VStack{
+                        Image(systemName: "square.grid.2x2" )
+                            .foregroundColor( selectedTab == 1 ? .blue : .gray)
+                        Text("Product Catalogue")
                     }
-                    
-                    
                 }
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                
-                //InventoryList(items: item)
-                
-                Spacer()
-            }
-            .padding()
-            .navigationBarTitle("Outdoor Gear Companion")
-            .navigationBarTitleDisplayMode(.inline)
-            
+                .tag(2)
+            Text("Gear Inventory")
+                .tabItem{
+                    VStack{
+                        Image(systemName:selectedTab == 3 ? "hammer.fill" : "hammer")
+                        Text(" Inventory")
+                    }
+                }
+                .tag(3)
         }
-        
         
     }
 }
-
 
 #Preview {
     Homepage()

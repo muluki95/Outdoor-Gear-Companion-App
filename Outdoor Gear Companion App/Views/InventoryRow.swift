@@ -16,34 +16,35 @@ struct InventoryRow: View {
         VStack {
             HStack(alignment:.top) {
                 //Image(systemName: "chair")
-                
-                AsyncImage(url: URL(string: item.imageURL)){phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .scaleEffect(0.7)
-                            .tint(.blue)
-                        
-                    case .success(let image):
-                       image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(10)
-                    case .failure:
-                        Image(systemName: "photo.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(10)
-                        
-                    @unknown default:
-                       EmptyView()
+                if let urlString = item.imageURL, let url = URL(string: urlString){
+                    AsyncImage(url: url){phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .scaleEffect(0.7)
+                                .tint(.blue)
+                            
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(10)
+                        case .failure:
+                            Image(systemName: "photo.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(10)
+                            
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
-                }
+                } 
                 
-                .padding(.trailing, 8)
+                
                 
                 VStack(alignment:.leading, spacing: 4){
                     
