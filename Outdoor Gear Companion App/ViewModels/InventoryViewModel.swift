@@ -4,7 +4,7 @@
 //
 //  Created by Esther Nzomo on 8/20/25.
 //
-
+/***
 import SwiftUI
 import Firebase
 import FirebaseStorage
@@ -43,19 +43,19 @@ class InventoryViewModel: ObservableObject {
         isLoading = true
         
         do{
-            var imageURL: String? = nil
-            if let image = image {
-                imageURL = try await repository.uploadImage(image)
+            //var imageURL: String? = nil
+            //if let image = image {
+               // imageURL = try await repository.uploadImage(image)
                 
             }
             let newItem = Inventory(
                 id: UUID().uuidString,
-                imageURL: imageURL,
+                //imageURL: imageURL,
                 imageName: imageName,
                 description: description
             )
-            try await repository.createInventoryItem(newItem)
-            inventoryItems.append(newItem)
+           // try await repository.createInventoryItem(newItem)
+           // inventoryItems.append(newItem)
             
         }catch {
             errorMessage = "Error adding new inventory item: \(error.localizedDescription)"
@@ -98,3 +98,4 @@ class InventoryViewModel: ObservableObject {
         isLoading = false
     }
 }
+*/
