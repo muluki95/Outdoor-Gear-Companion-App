@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct InventoryCell: View {
     let item: Inventory
@@ -13,34 +14,25 @@ struct InventoryCell: View {
     var body: some View {
         
                         HStack {
-                            if let urlString = item.imageURL, let url = URL(string: urlString)  {
-                                    AsyncImage(url: url) { phase in
-                                            switch phase {
-                                            case .empty:
-                                                ProgressView()
-                                                        .progressViewStyle(CircularProgressViewStyle())
-                                                        .scaleEffect(0.7)
-                                                        .tint(.blue)
-                                                        .frame(width: 60, height: 60)
-                                            case .success(let image):
-                                             image
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 60, height: 60)
-                                                        .cornerRadius(10)
-                                            case .failure:
-                                                    Image(systemName: "photo.fill")
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 60, height: 60)
-                                                        .foregroundColor(.gray)
-                                                        .cornerRadius(10)
-                                        @unknown default:
-                                                    EmptyView()
-                                                                }
-                                                            }
-                                                        }
-
+                            if let urlString = item.imageURL,
+                               let url = URL(string: urlString){
+                                KFImage(url)
+                                    .placeholder{
+                                        ProgressView()
+                                    }
+                                
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(10)
+                            } else {
+                                Image(systemName: "photo")
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 60, height: 60)
+                                                    .cornerRadius(10)
+                                                    .foregroundStyle(.gray)
+                            }
                                 VStack(alignment: .leading, spacing: 5) {
                                                 Text(item.imageName)
                                                     .font(.headline)
@@ -51,7 +43,7 @@ struct InventoryCell: View {
 
                                                         Spacer()
                                                     }
-                                                    Divider()
+                                                  
                     }
                     
                 }

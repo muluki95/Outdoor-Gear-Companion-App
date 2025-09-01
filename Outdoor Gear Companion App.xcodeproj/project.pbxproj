@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D740F2C52E653BD100A40C7B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D740F2C42E653BD100A40C7B /* Kingfisher */; };
 		D78790ED2E56308D009EAD98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D78790EC2E56308D009EAD98 /* FirebaseAuth */; };
 		D78790EF2E56308D009EAD98 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D78790EE2E56308D009EAD98 /* FirebaseFirestore */; };
 		D78790F12E56308D009EAD98 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D78790F02E56308D009EAD98 /* FirebaseStorage */; };
@@ -63,6 +64,7 @@
 				D78790EF2E56308D009EAD98 /* FirebaseFirestore in Frameworks */,
 				D78790F32E5630D0009EAD98 /* FirebaseAnalytics in Frameworks */,
 				D78790F12E56308D009EAD98 /* FirebaseStorage in Frameworks */,
+				D740F2C52E653BD100A40C7B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +85,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D740F2C32E653BD100A40C7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D77BD9052E4CFC8A003131B5 = {
 			isa = PBXGroup;
 			children = (
 				D77BD9102E4CFC8A003131B5 /* Outdoor Gear Companion App */,
 				D77BD91E2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */,
 				D77BD9282E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */,
+				D740F2C32E653BD100A40C7B /* Frameworks */,
 				D77BD90F2E4CFC8A003131B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 				D78790EE2E56308D009EAD98 /* FirebaseFirestore */,
 				D78790F02E56308D009EAD98 /* FirebaseStorage */,
 				D78790F22E5630D0009EAD98 /* FirebaseAnalytics */,
+				D740F2C42E653BD100A40C7B /* Kingfisher */,
 			);
 			productName = "Outdoor Gear Companion App";
 			productReference = D77BD90E2E4CFC8A003131B5 /* Outdoor Gear Companion App.app */;
@@ -212,6 +223,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				D78790EB2E56308D009EAD98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D740F2982E6538D800A40C7B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D77BD90F2E4CFC8A003131B5 /* Products */;
@@ -570,6 +582,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D740F2982E6538D800A40C7B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
 		D78790EB2E56308D009EAD98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -581,6 +601,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D740F2C42E653BD100A40C7B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D740F2982E6538D800A40C7B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		D78790EC2E56308D009EAD98 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D78790EB2E56308D009EAD98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

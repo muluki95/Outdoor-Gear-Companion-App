@@ -43,9 +43,13 @@ struct HomeContent: View {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
                 
-                //InventoryList(items: item)
+                Spacer(minLength: 20)
+                
+                InventoryList()
                 
                 Spacer()
+                
+                
             }
             .padding()
             .navigationBarTitle("Outdoor Gear Companion")
