@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D740F2C52E653BD100A40C7B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D740F2C42E653BD100A40C7B /* Kingfisher */; };
 		D78790ED2E56308D009EAD98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D78790EC2E56308D009EAD98 /* FirebaseAuth */; };
 		D78790EF2E56308D009EAD98 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D78790EE2E56308D009EAD98 /* FirebaseFirestore */; };
 		D78790F12E56308D009EAD98 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D78790F02E56308D009EAD98 /* FirebaseStorage */; };
 		D78790F32E5630D0009EAD98 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D78790F22E5630D0009EAD98 /* FirebaseAnalytics */; };
+		D7DB98612E669887006DC0E7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D7DB98602E669887006DC0E7 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 				D78790EF2E56308D009EAD98 /* FirebaseFirestore in Frameworks */,
 				D78790F32E5630D0009EAD98 /* FirebaseAnalytics in Frameworks */,
 				D78790F12E56308D009EAD98 /* FirebaseStorage in Frameworks */,
-				D740F2C52E653BD100A40C7B /* Kingfisher in Frameworks */,
+				D7DB98612E669887006DC0E7 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 				D78790EE2E56308D009EAD98 /* FirebaseFirestore */,
 				D78790F02E56308D009EAD98 /* FirebaseStorage */,
 				D78790F22E5630D0009EAD98 /* FirebaseAnalytics */,
-				D740F2C42E653BD100A40C7B /* Kingfisher */,
+				D7DB98602E669887006DC0E7 /* Kingfisher */,
 			);
 			productName = "Outdoor Gear Companion App";
 			productReference = D77BD90E2E4CFC8A003131B5 /* Outdoor Gear Companion App.app */;
@@ -601,11 +601,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D740F2C42E653BD100A40C7B /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D740F2982E6538D800A40C7B /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		D78790EC2E56308D009EAD98 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D78790EB2E56308D009EAD98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -625,6 +620,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D78790EB2E56308D009EAD98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		D7DB98602E669887006DC0E7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D740F2982E6538D800A40C7B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
