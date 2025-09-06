@@ -22,7 +22,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(0)
-            Text("Browse Gear")
+            BrowseGear(items: Inventory.mockItems)
                 .tabItem{
                     VStack{
                         Image(systemName: "magnifyingglass" )
@@ -31,7 +31,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(1)
-            Text("Product Catalogue")
+            ProductCatalogueList(products: Product.mockProducts)
                 .tabItem{
                     VStack{
                         Image(systemName: "square.grid.2x2" )

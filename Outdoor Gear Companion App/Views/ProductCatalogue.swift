@@ -2,7 +2,7 @@ import SwiftUI
 import Kingfisher
 
 struct ProductCatalogue: View {
-    let product: Product   // ✅ property at the struct level
+    let product: Product   
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -12,8 +12,8 @@ struct ProductCatalogue: View {
                let url = URL(string: urlString) {
                 KFImage(url)
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 250)
+                    .scaledToFill()
+                    .frame(maxHeight: 450)
                     .cornerRadius(12)
             }
             
