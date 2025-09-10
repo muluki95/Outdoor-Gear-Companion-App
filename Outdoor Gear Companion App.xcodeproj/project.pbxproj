@@ -41,7 +41,6 @@
 		D7BF97182E6F236100BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Outdoor Gear Companion AppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				gear.json,
 				product.json,
 			);
 			target = D77BD91A2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */;
@@ -62,7 +61,6 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = D77BD9172E4CFC8B003131B5 /* Sources */;
 			membershipExceptions = (
-				gear.json,
 				product.json,
 			);
 		};

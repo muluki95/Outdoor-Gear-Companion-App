@@ -16,7 +16,7 @@ class GearTest: XCTestCase {
       
 
         guard let url = Bundle(for: type(of: self)).url(forResource: "gear", withExtension: "json") else {
-            print("Bundle path: \(Bundle(for: type(of: self)).bundlePath)")
+            //print("Bundle path: \(Bundle(for: type(of: self)).bundlePath)")
             XCTFail("Missing JSON file in test bundle")
             return
         }
@@ -28,16 +28,16 @@ class GearTest: XCTestCase {
             
             
             let gear = try decoder.decode([Gear].self, from: data)
-            guard let gear = gear.first else {
+            guard let gearItem = gear.first else {
              
                 XCTFail("No gear found in JSON")
                 return
             }
                 // test the expected values
-                XCTAssertEqual(gear.imageURL, "https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
-                XCTAssertEqual(gear.imageName, "Hiking Boots")
-                XCTAssertEqual(gear.rating, 4.7)
-                XCTAssertEqual(gear.reviews,128 )
+                XCTAssertEqual(gearItem.imageURL, "https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+                XCTAssertEqual(gearItem.imageName, "Hiking Boots")
+                XCTAssertEqual(gearItem.rating, 4.7)
+                XCTAssertEqual(gearItem.reviews,128 )
                 
                 
             

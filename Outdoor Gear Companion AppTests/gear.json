@@ -13,14 +13,6 @@
     "rating": 4.7,
     "reviews": 128 },
     
-    {
-    "id": "A1B2C3D4-E5F6-7890-1234-56789ABCDEF1",
-      "imageURL": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-      "imageName": "Hiking Boots",
-      "rating": 4.7,
-      "reviews": 128
-    
-    },
     
     {
     "id": "C3D4E5F6-A7B8-9012-3456-789ABCDEF123",
