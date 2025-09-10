@@ -40,7 +40,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(2)
-            Text("Gear Inventory")
+            GearManagementList(gears: Gear.mockData)
                 .tabItem{
                     VStack{
                         Image(systemName:selectedTab == 3 ? "hammer.fill" : "hammer")

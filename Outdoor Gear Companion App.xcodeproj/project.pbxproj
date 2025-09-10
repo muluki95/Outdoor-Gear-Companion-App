@@ -37,6 +37,37 @@
 		D77BD9252E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Outdoor Gear Companion AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D7BF97182E6F236100BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Outdoor Gear Companion AppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				gear.json,
+				product.json,
+			);
+			target = D77BD91A2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */;
+		};
+		D7BF97212E6F304900BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Outdoor Gear Companion AppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				gear.json,
+				inventory.json,
+				product.json,
+			);
+			target = D77BD9242E4CFC8B003131B5 /* Outdoor Gear Companion AppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		D7BF97192E6F236100BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Compile Sources" phase from "Outdoor Gear Companion AppTests" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = D77BD9172E4CFC8B003131B5 /* Sources */;
+			membershipExceptions = (
+				gear.json,
+				product.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D77BD9102E4CFC8A003131B5 /* Outdoor Gear Companion App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -45,6 +76,11 @@
 		};
 		D77BD91E2E4CFC8B003131B5 /* Outdoor Gear Companion AppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D7BF97182E6F236100BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Outdoor Gear Companion AppTests" target */,
+				D7BF97192E6F236100BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Compile Sources" phase from "Outdoor Gear Companion AppTests" target */,
+				D7BF97212E6F304900BC18AD /* Exceptions for "Outdoor Gear Companion AppTests" folder in "Outdoor Gear Companion AppUITests" target */,
+			);
 			path = "Outdoor Gear Companion AppTests";
 			sourceTree = "<group>";
 		};

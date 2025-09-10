@@ -53,7 +53,7 @@ struct HomeContent: View {
             }
             .padding()
             .navigationBarTitle("Outdoor Gear Companion")
-            .navigationBarTitleDisplayMode(.inline)
+     
             
         }
         

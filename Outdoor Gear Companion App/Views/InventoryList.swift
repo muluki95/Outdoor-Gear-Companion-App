@@ -37,7 +37,7 @@ struct InventoryList: View {
                 
             }
             .navigationTitle("Inventory")
-            .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }
