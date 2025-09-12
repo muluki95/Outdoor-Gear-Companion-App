@@ -13,9 +13,7 @@ struct HomeContent: View {
             VStack{
                 Section {
                     
-                    Button{
-                        //action
-                    } label: {
+                    NavigationLink(destination: BrowseGear(items:Inventory.mockItems)) {
                         Text("Browse Gear")
                             .padding(10)
                             .font(.headline)

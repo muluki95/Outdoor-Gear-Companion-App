@@ -68,6 +68,7 @@ struct BrowseGear: View {
                 }
             }
             .navigationTitle("Browse Gear")
+            
         }
         
     }
