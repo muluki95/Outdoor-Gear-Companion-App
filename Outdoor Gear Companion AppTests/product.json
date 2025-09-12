@@ -1,9 +1,4 @@
-//
-//  Untitled.swift
-//  Outdoor Gear Companion App
-//
-//  Created by Esther Nzomo on 9/8/25.
-//
+
 
 [
     {
@@ -25,12 +20,12 @@
     "imageName": "Camping Tent",
     "rating": 4.8,
     "description": "A waterproof, easy-to-setup tent for up to 3 people.",
-      "specifications": {
+    "specifications": {
         "Capacity": "3 persons",
         "Material": "Polyester",
         "Weight": "2.5kg",
         "Color": "Blue"
-    
+    }
    },
     {
     "id": "3F1D8E4F-7F6A-41B2-9B62-9D6F1A2C3E8F",
@@ -39,10 +34,10 @@
     "rating": 4.2,
     "description": "Durable and safe climbing rope ideal for both beginners and professionals.",
     "specifications": {
-      "Length": "60m",
-      "Diameter": "9.8mm",
-      "Material": "Polyamide",
-      "Color": "Red"
-    
+        "Length": "60m",
+        "Diameter": "9.8mm",
+        "Material": "Polyamide",
+        "Color": "Red"
+    }
    }
 ]

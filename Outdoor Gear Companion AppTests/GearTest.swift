@@ -16,7 +16,7 @@ class GearTest: XCTestCase {
       
 
         guard let url = Bundle(for: type(of: self)).url(forResource: "gear", withExtension: "json") else {
-            //print("Bundle path: \(Bundle(for: type(of: self)).bundlePath)")
+          
             XCTFail("Missing JSON file in test bundle")
             return
         }
