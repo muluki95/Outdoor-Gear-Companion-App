@@ -35,7 +35,7 @@ struct Homepage: View {
                 .tabItem{
                     VStack{
                         Image(systemName: "square.grid.2x2" )
-                            .foregroundColor( selectedTab == 1 ? .blue : .gray)
+                            .foregroundColor( selectedTab == 2 ? .blue : .gray)
                         Text("Product Catalogue")
                     }
                 }
@@ -48,6 +48,14 @@ struct Homepage: View {
                     }
                 }
                 .tag(3)
+            ProfileView(user: User.mockUser)
+                .tabItem{
+                    VStack{
+                        Image(systemName:"person.fill")
+                            .foregroundColor(selectedTab == 4 ? .blue : .gray)
+                        Text("Profile")
+                    }
+                }
         }
         
     }

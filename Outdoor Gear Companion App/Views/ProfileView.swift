@@ -6,18 +6,33 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 
 struct ProfileView : View {
+    @StateObject var viewModel = ProfileViewModel()
+    let user: User
+    
     var body: some View {
         VStack {
             Section{
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80)
+                PhotosPicker(selection: $viewModel.selectedItem){
+                    if let profileImage = viewModel.profileImage {
+                        profileImage
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                    } else {
+                        Image(user.profileImageUrl ?? "")
+                            .resizable()
+                            .frame(width: 80, height:80)
+                            .foregroundStyle(.gray)
+                            .clipShape(Circle())
+                    }
+                }
                    
-                Text("Esther Nzomo")
+                Text(user.fullname)
                     .font(.title2)
                     .fontWeight(.semibold)
                 
@@ -42,10 +57,12 @@ struct ProfileView : View {
                     Button("Log Out"){
                         
                     }
+                    .foregroundStyle(.red)
                     
                     Button("Delete Account"){
                         
                     }
+                    .foregroundStyle(.red)
                     
                 }
                 
@@ -56,5 +73,5 @@ struct ProfileView : View {
 
 
 #Preview {
-    ProfileView()
+    ProfileView(user: User.mockUser)
 }
