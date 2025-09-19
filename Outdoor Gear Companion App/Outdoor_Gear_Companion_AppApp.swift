@@ -25,7 +25,7 @@ struct Outdoor_Gear_Companion_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+           ContentView()
         }
     }
 }
