@@ -48,7 +48,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(3)
-            ProfileView(user: User.mockUser)
+            ProfileView()
                 .tabItem{
                     VStack{
                         Image(systemName:"person.fill")

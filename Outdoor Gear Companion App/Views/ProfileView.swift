@@ -7,12 +7,16 @@
 
 import SwiftUI
 import PhotosUI
+import Kingfisher
 
 
 struct ProfileView : View {
     @StateObject var viewModel = ProfileViewModel()
-    let user: User
+    //let user: User
     
+    private var user: User?{
+        return viewModel.currentUser
+    }
     var body: some View {
         VStack {
             Section{
@@ -23,19 +27,35 @@ struct ProfileView : View {
                             .scaledToFill()
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
-                    } else {
-                        Image(user.profileImageUrl ?? "")
+                    } else if let imageUrl = user?.profileImageUrl,
+                              let url = URL(string: imageUrl) {
+                            KFImage(url)
+                            .placeholder {
+                                Image(systemName: "person.circle.fill")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 80, height: 80)
+                                    .foregroundStyle(.gray)
+                            }
                             .resizable()
-                            .frame(width: 80, height:80)
-                            .foregroundStyle(.gray)
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
                             .clipShape(Circle())
+                    } else {
+                        // Fallback placeholder
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .foregroundStyle(.gray)
                     }
                 }
-                   
-                Text(user.fullname)
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                
+                if let fullname = user?.fullname {
+                    Text(fullname)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                }
             }
             .padding(.bottom)
             List{
@@ -73,5 +93,5 @@ struct ProfileView : View {
 
 
 #Preview {
-    ProfileView(user: User.mockUser)
+    ProfileView()
 }
