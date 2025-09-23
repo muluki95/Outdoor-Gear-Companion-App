@@ -21,11 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct Outdoor_Gear_Companion_AppApp: App {
+    @StateObject var viewModel =    InventoryViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
            ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

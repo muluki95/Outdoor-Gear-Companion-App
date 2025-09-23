@@ -11,12 +11,21 @@ import Kingfisher
 
 struct BrowseGear: View {
     @State var searchText = ""
+    @EnvironmentObject var viewModel: InventoryViewModel
     
-    let items: [Inventory]
+  
     
     let columns = [GridItem(.flexible()),
                    GridItem(.flexible())
     ]
+    
+    var filteredItems: [Inventory] {
+        if searchText.isEmpty {
+            return viewModel.items
+        } else {
+            return viewModel.items.filter{ $0.imageName.lowercased().contains(searchText.lowercased()) }
+        }
+    }
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -42,7 +51,7 @@ struct BrowseGear: View {
                     
                     //the grids
                     LazyVGrid(columns:columns){
-                        ForEach(items){singleItem in
+                        ForEach(filteredItems){singleItem in
                             VStack(alignment:.leading, spacing: 8){
                                 if let urlString = singleItem.imageURL,
                                    let url = URL(string: urlString){
@@ -68,10 +77,18 @@ struct BrowseGear: View {
                 }
             }
             .navigationTitle("Browse Gear")
+            .onAppear {
+                Task {
+                    await viewModel.fetchInventory()
+                }
+                
+            }
             
         }
-        
     }
 }
 
-
+#Preview {
+    BrowseGear()
+        .environmentObject(InventoryViewModel())
+}

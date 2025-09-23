@@ -10,21 +10,27 @@ import SwiftUI
 
 struct GearManagementList: View {
    
-    let gears:[Gear]
+    
+    @EnvironmentObject var viewModel: InventoryViewModel
     
     var body: some View {
         NavigationStack{
             List {
-              ForEach(gears){ gear in
-                GearManagement(gear: gear)
+                ForEach(viewModel.items){ item in
+                GearManagement(item: item)
                     
                 }
             }
             .navigationTitle("Gear Management")
-            
+            .onAppear {
+                Task {
+                    await viewModel.fetchInventory()
+                }
+            }
         }
     }
 }
 #Preview{
-    GearManagementList(gears: Gear.mockData)
+    GearManagementList()
+        .environmentObject(InventoryViewModel())
 }

@@ -11,6 +11,7 @@ import SwiftUI
 struct Homepage: View {
     
     @State private var selectedTab = 0
+    @EnvironmentObject var viewModel: InventoryViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -22,7 +23,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(0)
-            BrowseGear(items: Inventory.mockItems)
+            BrowseGear()
                 .tabItem{
                     VStack{
                         Image(systemName: "magnifyingglass" )
@@ -40,7 +41,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(2)
-            GearManagementList(gears: Gear.mockData)
+            GearManagementList()
                 .tabItem{
                     VStack{
                         Image(systemName:selectedTab == 3 ? "hammer.fill" : "hammer")
@@ -63,4 +64,5 @@ struct Homepage: View {
 
 #Preview {
     Homepage()
+        .environmentObject(InventoryViewModel())
 }

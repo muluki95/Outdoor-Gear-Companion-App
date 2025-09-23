@@ -2,7 +2,10 @@ import SwiftUI
 import Kingfisher
 
 struct ProductCatalogue: View {
-    let product: Product   
+    let product: Product
+    @EnvironmentObject var viewModel: InventoryViewModel
+    @State private var isAdded = false
+    @State private var errorMessage: String?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -50,12 +53,20 @@ struct ProductCatalogue: View {
             // Add to Inventory Button
             Button {
                 // action
+                Task{
+                   try await viewModel.addInventory(product: product)
+                }
             } label: {
-                Text("Add to Inventory")
+                Text(isAdded ? "Added ✅" : "Add to Inventory")
                     .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(Color.blue)
+                    .background(isAdded ? Color.green : Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+            }
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .font(.caption)
             }
         }
         .padding()

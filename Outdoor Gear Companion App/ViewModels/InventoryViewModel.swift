@@ -4,98 +4,59 @@
 //
 //  Created by Esther Nzomo on 8/20/25.
 //
-/***
+
 import SwiftUI
-import Firebase
-import FirebaseStorage
 import FirebaseFirestore
 
-@MainActor
+
 class InventoryViewModel: ObservableObject {
-    private let repository: InventoryRepository
+    @Published var items: [Inventory] = []
+   
+    private var db = Firestore.firestore()
     
-    @Published var inventoryItems:[Inventory] = []
-    @Published var isLoading: Bool = true
-    @Published var errorMessage: String? = nil
-    
-    
-    init(repository: InventoryRepository = InventoryRepository()) {
-        self.repository = repository
-    }
-    
-    
-    //read
-    func fetchInventoryItems() async {
-        isLoading = true
-        
-        do{
-            self.inventoryItems = try await repository.fetchInventoryItems()
-            
-        } catch {
-            errorMessage = "Error fetching inventory items: \(error.localizedDescription)"
+    init() {
+        Task {
+            await fetchInventory()
         }
-        isLoading = false
     }
     
     
-    //create
-    func addInventoryItem(image: UIImage?, imageName: String, description: String) async {
-        isLoading = true
-        
+    func fetchInventory() async {
         do{
-            //var imageURL: String? = nil
-            //if let image = image {
-               // imageURL = try await repository.uploadImage(image)
-                
+            let snapshot = try await db.collection("inventory")
+                .order(by: "imageName")
+                .getDocuments()
+            
+            let inventory = try snapshot.documents.compactMap {
+                try $0.data(as: Inventory.self)
             }
-            let newItem = Inventory(
-                id: UUID().uuidString,
-                //imageURL: imageURL,
-                imageName: imageName,
-                description: description
-            )
-           // try await repository.createInventoryItem(newItem)
-           // inventoryItems.append(newItem)
-            
-        }catch {
-            errorMessage = "Error adding new inventory item: \(error.localizedDescription)"
-            
-        }
-        isLoading = false
-    }
-    
-    //update
-    
-    func updateInventoryItem(_ item: Inventory) async {
-        isLoading = true
-        do{
-            try await repository.updateInventoryItem(item)
-            
-            if let index = inventoryItems.firstIndex(where: {$0.id == item.id}){
-                inventoryItems[index] = item
-            }
+            self.items = inventory
             
         } catch {
-            errorMessage = "Failed to update item:\(error.localizedDescription)"
             
         }
-        isLoading = false
+        
     }
     
     
-    
-    //delete
-    func deleteInventoryItem(_ item: Inventory) async {
-        isLoading = true
+    //add new inventory item
+    func addInventory(product: Product) async throws {
+        let newInventoryItem = Inventory (
+            uid: nil,
+            imageURL: product.imageURL,
+            imageName: product.imageName,
+            description: product.description,
+        )
         
         do{
-            try await repository.deleteItem(id: item.id)
-            inventoryItems.removeAll(where: {$0.id == item.id})
-        } catch {
-            errorMessage = "Failed to delete item: \(error.localizedDescription)"
+            _  = try db.collection("inventory").addDocument(from: newInventoryItem)
+            print("Added to inventory collection ")
             
+            await fetchInventory()
+            
+        } catch {
+            print("Error adding new inventory item: \(error.localizedDescription)")
         }
-        isLoading = false
     }
 }
-*/
+

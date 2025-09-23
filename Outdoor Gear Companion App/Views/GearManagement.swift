@@ -11,11 +11,11 @@ import Kingfisher
 
 struct GearManagement: View {
     
-    let gear: Gear
+    let item: Inventory
     
     var body: some View {
         HStack{
-            if let urlString = gear.imageURL,
+            if let urlString = item.imageURL,
                let url = URL(string: urlString){
                 KFImage(url)
                     .placeholder{
@@ -36,16 +36,13 @@ struct GearManagement: View {
             }
                 
             VStack(alignment:.leading){
-                Text(gear.imageName)
+                Text(item.imageName)
                     .font(.headline)
                     .fontWeight(.bold)
                 
-                RatingView(rating: gear.rating)
-                    
-                
-                Text("\(gear.reviews) reviews")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                Text(item.description)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 
             }
             .padding()
