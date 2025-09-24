@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseFirestore
 
-
+@MainActor
 class InventoryViewModel: ObservableObject {
     @Published var items: [Inventory] = []
    

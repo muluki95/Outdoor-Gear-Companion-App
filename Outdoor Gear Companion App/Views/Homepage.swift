@@ -12,6 +12,7 @@ struct Homepage: View {
     
     @State private var selectedTab = 0
     @EnvironmentObject var viewModel: InventoryViewModel
+    @EnvironmentObject var productVM: ProductViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -32,7 +33,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(1)
-            ProductCatalogueList(products: Product.mockProducts)
+            ProductCatalogueList()
                 .tabItem{
                     VStack{
                         Image(systemName: "square.grid.2x2" )
@@ -65,4 +66,5 @@ struct Homepage: View {
 #Preview {
     Homepage()
         .environmentObject(InventoryViewModel())
+        .environmentObject(ProductViewModel())
 }

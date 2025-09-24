@@ -54,7 +54,12 @@ struct ProductCatalogue: View {
             Button {
                 // action
                 Task{
-                   try await viewModel.addInventory(product: product)
+                    do{
+                        try await viewModel.addInventory(product: product)
+                        isAdded = true
+                    }catch {
+                        print("Failed to add inventory: \(error.localizedDescription)")
+                    }
                 }
             } label: {
                 Text(isAdded ? "Added ✅" : "Add to Inventory")
@@ -71,9 +76,5 @@ struct ProductCatalogue: View {
         }
         .padding()
     }
-}
-
-#Preview {
-    ProductCatalogue(product: Product.mockProducts[0])
 }
 

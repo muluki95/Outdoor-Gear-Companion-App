@@ -9,22 +9,33 @@ import SwiftUI
 
 
 struct ProductCatalogueList: View {
-    let products: [Product]
+    @EnvironmentObject var productVM: ProductViewModel
+    
     var body: some View {
         NavigationStack{
             ScrollView {
                 VStack(alignment: .leading, spacing:20){
-                    ForEach(products){product in
-                        ProductCatalogue(product: product)
+                    if productVM.products.isEmpty {
+                        ProgressView("Loading products...")
+                    } else {
+                        ForEach(productVM.products){product in
+                            ProductCatalogue(product: product)
+                        }
                     }
                 }
                 
             }
             .navigationTitle("Product Catalogue")
+            .onAppear {
+                Task{
+                    try await productVM.fetchProducts()
+                }
+            }
             
         }
     }
 }
 #Preview {
-    ProductCatalogueList(products: Product.mockProducts)
+    ProductCatalogueList()
+        .environmentObject(ProductViewModel())
 }
