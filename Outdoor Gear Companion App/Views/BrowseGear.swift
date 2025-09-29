@@ -58,18 +58,21 @@ struct BrowseGear: View {
                                    let url = URL(string: urlString){
                                     KFImage(url)
                                         .resizable()
-                                        .aspectRatio(0.8, contentMode: .fill)
-                                        .frame(height: 200)
+                                        .scaledToFill()
+                                        .frame(width: 160, height: 200)
                                         .clipped()
+                                        .cornerRadius(10)
                                     
                                 }
                                 
                                 Text(gear.imageName)
                                     .font(.headline)
+                                    .lineLimit(1)
                                 
                                 Text("\(gear.reviews) reviews • ⭐️ \(gear.rating, specifier: "%.1f")")
                                                                     .font(.subheadline)
                                                                     .foregroundColor(.secondary)
+                                                                    .lineLimit(1)
                                 
                             }
                         }
