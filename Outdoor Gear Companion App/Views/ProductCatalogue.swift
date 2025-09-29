@@ -15,7 +15,7 @@ struct ProductCatalogue: View {
                let url = URL(string: urlString) {
                 KFImage(url)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(maxHeight: 450)
                     .cornerRadius(12)
             }

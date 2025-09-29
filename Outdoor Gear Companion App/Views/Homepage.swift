@@ -13,6 +13,7 @@ struct Homepage: View {
     @State private var selectedTab = 0
     @EnvironmentObject var viewModel: InventoryViewModel
     @EnvironmentObject var productVM: ProductViewModel
+    @EnvironmentObject var gearViewModel: BrowseGearViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -67,4 +68,5 @@ struct Homepage: View {
     Homepage()
         .environmentObject(InventoryViewModel())
         .environmentObject(ProductViewModel())
+        .environmentObject (BrowseGearViewModel())
 }

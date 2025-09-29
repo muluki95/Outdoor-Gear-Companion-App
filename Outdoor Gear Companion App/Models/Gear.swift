@@ -6,14 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
+import FirebaseFirestore
 
 
 struct Gear: Codable, Identifiable {
-    var id: String
+  @DocumentID var uid: String?
     let imageURL: String?
     let imageName: String
     let rating: Double
     let reviews: Int
+    
+    
+    var id: String {
+        return uid ?? UUID().uuidString
+    }
     
 }
 

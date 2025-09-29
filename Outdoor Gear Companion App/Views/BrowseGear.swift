@@ -12,6 +12,7 @@ import Kingfisher
 struct BrowseGear: View {
     @State var searchText = ""
     @EnvironmentObject var viewModel: InventoryViewModel
+    @EnvironmentObject var gearViewModel: BrowseGearViewModel
     
   
     
@@ -19,11 +20,11 @@ struct BrowseGear: View {
                    GridItem(.flexible())
     ]
     
-    var filteredItems: [Inventory] {
+    var filteredItems: [Gear] {
         if searchText.isEmpty {
-            return viewModel.items
+            return gearViewModel.gears
         } else {
-            return viewModel.items.filter{ $0.imageName.lowercased().contains(searchText.lowercased()) }
+            return gearViewModel.gears.filter{ $0.imageName.lowercased().contains(searchText.lowercased()) }
         }
     }
     var body: some View {
@@ -51,9 +52,9 @@ struct BrowseGear: View {
                     
                     //the grids
                     LazyVGrid(columns:columns){
-                        ForEach(filteredItems){singleItem in
+                        ForEach(filteredItems){gear in
                             VStack(alignment:.leading, spacing: 8){
-                                if let urlString = singleItem.imageURL,
+                                if let urlString = gear.imageURL,
                                    let url = URL(string: urlString){
                                     KFImage(url)
                                         .resizable()
@@ -63,12 +64,12 @@ struct BrowseGear: View {
                                     
                                 }
                                 
-                                Text(singleItem.imageName)
+                                Text(gear.imageName)
                                     .font(.headline)
                                 
-                                Text(singleItem.description)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                                Text("\(gear.reviews) reviews • ⭐️ \(gear.rating, specifier: "%.1f")")
+                                                                    .font(.subheadline)
+                                                                    .foregroundColor(.secondary)
                                 
                             }
                         }
@@ -79,7 +80,7 @@ struct BrowseGear: View {
             .navigationTitle("Browse Gear")
             .onAppear {
                 Task {
-                    await viewModel.fetchInventory()
+                   try await gearViewModel.fetchGears()
                 }
                 
             }
@@ -91,4 +92,5 @@ struct BrowseGear: View {
 #Preview {
     BrowseGear()
         .environmentObject(InventoryViewModel())
+        .environmentObject(BrowseGearViewModel())
 }

@@ -23,6 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Outdoor_Gear_Companion_AppApp: App {
     @StateObject var viewModel =    InventoryViewModel()
     @StateObject var productVM = ProductViewModel()
+    @StateObject var gearViewModel = BrowseGearViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
@@ -30,6 +31,7 @@ struct Outdoor_Gear_Companion_AppApp: App {
            ContentView()
                 .environmentObject(viewModel)
                 .environmentObject(productVM)
+                .environmentObject(gearViewModel)
         }
     }
 }
