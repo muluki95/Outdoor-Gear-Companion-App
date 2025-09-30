@@ -11,6 +11,11 @@ import FirebaseFirestore
 @MainActor
 class InventoryViewModel: ObservableObject {
     @Published var items: [Inventory] = []
+    @Published var gears: [Gear] = []
+    @Published var products: [Product] = []
+       
+    
+    
    
     private var db = Firestore.firestore()
     
@@ -38,9 +43,19 @@ class InventoryViewModel: ObservableObject {
         
     }
     
+    func addGear(_ gear: Gear) {
+            if !gears.contains(where: { $0.id == gear.id }) {
+                gears.append(gear)
+            }
+        }
+    
     
     //add new inventory item
-    func addInventory(product: Product) async throws {
+    func addProduct(product: Product) async throws {
+        if !products.contains(where: { $0.id == product.id }) {
+                    products.append(product)
+                }
+        
         let newInventoryItem = Inventory (
             uid: nil,
             imageURL: product.imageURL,

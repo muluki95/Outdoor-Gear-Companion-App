@@ -53,27 +53,31 @@ struct BrowseGear: View {
                     //the grids
                     LazyVGrid(columns:columns){
                         ForEach(filteredItems){gear in
-                            VStack(alignment:.leading, spacing: 8){
-                                if let urlString = gear.imageURL,
-                                   let url = URL(string: urlString){
-                                    KFImage(url)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 160, height: 200)
-                                        .clipped()
-                                        .cornerRadius(10)
-                                    
+                            NavigationLink(destination: GearDetailView(gear: gear)
+                                        .environmentObject(viewModel)) {
+                                            VStack(alignment:.leading, spacing: 8){
+                                                if let urlString = gear.imageURL,
+                                                   let url = URL(string: urlString){
+                                                    KFImage(url)
+                                                        .resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 160, height: 200)
+                                                        .clipped()
+                                                        .cornerRadius(10)
+                                                    
+                                                }
+                                                
+                                                Text(gear.imageName)
+                                                    .font(.headline)
+                                                    .lineLimit(1)
+                                                
+                                                Text("\(gear.reviews) reviews • ⭐️ \(gear.rating, specifier: "%.1f")")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                                    .lineLimit(1)
+                                                
+                                                
                                 }
-                                
-                                Text(gear.imageName)
-                                    .font(.headline)
-                                    .lineLimit(1)
-                                
-                                Text("\(gear.reviews) reviews • ⭐️ \(gear.rating, specifier: "%.1f")")
-                                                                    .font(.subheadline)
-                                                                    .foregroundColor(.secondary)
-                                                                    .lineLimit(1)
-                                
                             }
                         }
                     }

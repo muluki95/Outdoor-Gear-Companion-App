@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProductCatalogueList: View {
     @EnvironmentObject var productVM: ProductViewModel
+    @EnvironmentObject var viewModel: InventoryViewModel
     
     var body: some View {
         NavigationStack{
@@ -38,4 +39,5 @@ struct ProductCatalogueList: View {
 #Preview {
     ProductCatalogueList()
         .environmentObject(ProductViewModel())
+        .environmentObject(InventoryViewModel())
 }

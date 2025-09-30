@@ -16,20 +16,28 @@ struct GearManagementList: View {
     var body: some View {
         NavigationStack{
             List {
-                ForEach(viewModel.items){ item in
-                GearManagement(item: item)
-                    
+                if !viewModel.gears.isEmpty {
+                    Section(header: Text("Gears")){
+                        ForEach(viewModel.gears){ gear in
+                            GearManagement(gear: gear)
+                        }
+                    }
+                }
+                
+                if !viewModel.products.isEmpty {
+                    Section(header: Text("Products")){
+                        ForEach(viewModel.products) { product in
+                            ProductCatalogue(product: product)
+                        }
+                    }
                 }
             }
             .navigationTitle("Gear Management")
-            .onAppear {
-                Task {
-                    await viewModel.fetchInventory()
-                }
+            
             }
         }
     }
-}
+
 #Preview{
     GearManagementList()
         .environmentObject(InventoryViewModel())

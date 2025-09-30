@@ -55,7 +55,7 @@ struct ProductCatalogue: View {
                 // action
                 Task{
                     do{
-                        try await viewModel.addInventory(product: product)
+                        try await viewModel.addProduct(product: product)
                         isAdded = true
                     }catch {
                         print("Failed to add inventory: \(error.localizedDescription)")
