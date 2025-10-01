@@ -9,7 +9,7 @@
 import SwiftUI
 import Kingfisher
 
-struct GearManagement: View {
+struct AllInventory: View {
     
     let gear: Gear
     

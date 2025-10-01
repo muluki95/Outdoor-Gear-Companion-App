@@ -73,5 +73,22 @@ class InventoryViewModel: ObservableObject {
             print("Error adding new inventory item: \(error.localizedDescription)")
         }
     }
+    
+    
+    func removeGear(_ gear: Gear) {
+        if let index = gears.firstIndex(where: {$0.id == gear.id}) {
+            gears.remove(at: index)
+            print("Gear removed.")
+            
+        }
+        
+    }
+    
+    func removeProduct(_ product: Product) {
+        if let index = products.firstIndex(where: {$0.id == product.id }){
+            products.remove(at: index)
+            print("Product removed.")
+        }
+    }
 }
 

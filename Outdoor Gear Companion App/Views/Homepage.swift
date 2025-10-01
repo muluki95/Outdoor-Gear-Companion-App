@@ -43,7 +43,7 @@ struct Homepage: View {
                     }
                 }
                 .tag(2)
-            GearManagementList()
+            AllInventoryList()
                 .tabItem{
                     VStack{
                         Image(systemName:selectedTab == 3 ? "hammer.fill" : "hammer")

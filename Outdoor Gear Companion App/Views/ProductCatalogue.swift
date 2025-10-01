@@ -4,7 +4,6 @@ import Kingfisher
 struct ProductCatalogue: View {
     let product: Product
     @EnvironmentObject var viewModel: InventoryViewModel
-    @State private var isAdded = false
     @State private var errorMessage: String?
     
     var body: some View {
@@ -51,22 +50,27 @@ struct ProductCatalogue: View {
             }
             
             // Add to Inventory Button
-            Button {
-                // action
-                Task{
-                    do{
-                        try await viewModel.addProduct(product: product)
-                        isAdded = true
-                    }catch {
-                        print("Failed to add inventory: \(error.localizedDescription)")
+            if !viewModel.products.contains(where: {$0.id == product.id}) {
+                Button {
+                    // action
+                    Task{
+                        do{
+                            try await viewModel.addProduct(product: product)
+                        }catch {
+                            print("Failed to add inventory: \(error.localizedDescription)")
+                        }
                     }
+                } label: {
+                    Text( "Add to Inventory")
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background( Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-            } label: {
-                Text(isAdded ? "Added ✅" : "Add to Inventory")
-                    .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(isAdded ? Color.green : Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+            } else {
+                Text(" Added to Inventory")
+                    .foregroundColor(.green)
+                    .font(.subheadline)
             }
             if let errorMessage = errorMessage {
                 Text(errorMessage)
