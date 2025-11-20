@@ -16,8 +16,8 @@ struct BrowseGear: View {
     
   
     
-    let columns = [GridItem(.flexible()),
-                   GridItem(.flexible())
+    let columns = [
+        GridItem(.adaptive(minimum: 160), spacing: 16)
     ]
     
     var filteredItems: [Gear] {
