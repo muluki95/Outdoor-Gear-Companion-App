@@ -4,6 +4,7 @@ import Kingfisher
 
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
+    @StateObject var settingsVM = SettingsViewModel()
     
     private var user: User? {
         return viewModel.currentUser
@@ -30,17 +31,46 @@ struct ProfileView: View {
             List {
                 Section {
                     ForEach(SettingsOptionsViewModel.allCases) { option in
-                        HStack {
-                            Image(systemName: option.imageName)
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(option.imageBackgroundColor)
-                            
-                            Text(option.title)
-                                .fontWeight(.semibold)
+                        switch option {
+                        case .darkMode:
+                            Toggle(isOn: $settingsVM.isDarkModeEnabled){
+                                HStack{
+                                    Image(systemName: option.imageName)
+                                        .resizable()
+                                        .frame(width:24, height: 24)
+                                        .foregroundColor(option.imageBackgroundColor)
+                                    Text(option.title)
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                            .onChange(of: settingsVM.isDarkModeEnabled, initial: false){oldValue, newValue in
+                                if let window = UIApplication.shared.connectedScenes
+                                    .compactMap ({ $0 as? UIWindowScene})
+                                    .first? .windows.first{
+                                    window.overrideUserInterfaceStyle = newValue ? .dark : .light
+                                }
+                            }
+                        case .activeStatus:
+                            Toggle(isOn: $settingsVM.isActiveStatusOn){
+                                VStack(alignment: .leading){
+                                    HStack{
+                                        Image(systemName: option.imageName)
+                                            .resizable()
+                                            .frame(width: 24, height: 24)
+                                            .foregroundColor(option.imageBackgroundColor)
+                                        Text(option.title)
+                                            .fontWeight(.semibold)
+                                    }
+                                        Text(settingsVM.isActiveStatusOn ? "Active" : "Offline")
+                                            .font(.subheadline)
+                                            .foregroundColor(settingsVM.isActiveStatusOn ? .green : .gray)
+                                    
+                                }
+                            }
+                            }
                         }
                     }
-                }
+                
                 Section {
                     Button("Log Out") {
                         AuthService.shared.signOut()

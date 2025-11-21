@@ -11,7 +11,7 @@ import Combine
 import Firebase
 
 
-
+@MainActor
 class ProfileViewModel: ObservableObject {
     @Published var selectedItem: PhotosPickerItem? {
         didSet { Task { try await loadImage() }}

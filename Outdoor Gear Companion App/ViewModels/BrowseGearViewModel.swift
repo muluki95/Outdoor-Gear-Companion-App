@@ -9,12 +9,10 @@ import FirebaseFirestore
 import SwiftUI
 
 
-
+@MainActor
 class BrowseGearViewModel: ObservableObject {
     @Published var gears: [Gear] = []
     private var db = Firestore.firestore()
-    
-    
     
     
     func fetchGears() async throws {

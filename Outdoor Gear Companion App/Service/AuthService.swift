@@ -20,7 +20,12 @@ class AuthService {
     init() {
         self.userSession = Auth.auth().currentUser
         loadCurrentUserData()
-        print("User session id is \(userSession?.uid)")
+        if let uid = userSession?.uid {
+            print("User session id is \(uid)")
+        } else {
+            print("No user session")
+        }
+       
     }
     
     @MainActor

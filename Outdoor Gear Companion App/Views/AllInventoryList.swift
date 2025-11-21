@@ -2,7 +2,8 @@ import SwiftUI
 
 struct AllInventoryList: View {
     @EnvironmentObject var viewModel: InventoryViewModel
-    @State private var itemsToDelete: Identifiable? = nil
+    @State private var itemsToDelete: Any? = nil
+   
     @State private var showConfirmDelete = false
     
     var body: some View {

@@ -22,8 +22,12 @@ class UserService {
         let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
         let user = try snapshot.data(as: User.self)
         self.currentUser = user
-        print("Current user in service is \(currentUser)")
         
+        if let user = currentUser {
+            print ("Current user in service is \(user)")
+        } else {
+            print("No current user.")
+        }
     }
     
     
