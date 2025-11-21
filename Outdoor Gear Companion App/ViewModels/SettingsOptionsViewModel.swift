@@ -12,28 +12,28 @@ import SwiftUI
 
 enum SettingsOptionsViewModel: Int, CaseIterable, Identifiable {
     case darkMode
-    case activeStatus
+    case notificationsEnabled
     
     
     
     var title: String {
         switch self {
         case .darkMode: return "Dark Mode"
-        case .activeStatus: return "Active Status"
+        case .notificationsEnabled: return "Notifications"
         
         }
     }
     var imageName: String {
         switch self {
         case .darkMode: return "moon.circle.fill"
-        case .activeStatus: return "message.badge.circle.fill"
+        case .notificationsEnabled: return "message.badge.circle.fill"
         
         }
     }
     var imageBackgroundColor: Color {
         switch self {
         case .darkMode: return .black
-        case .activeStatus: return Color.green
+        case .notificationsEnabled: return Color.green
         }
     }
     

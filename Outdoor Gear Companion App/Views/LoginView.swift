@@ -32,6 +32,7 @@ struct LoginView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
                         .padding(.horizontal, 24)
+                        .autocapitalization(.none)
                     SecureField("Enter your password", text: $viewModel.password)
                         .font(.subheadline)
                         .padding(12)

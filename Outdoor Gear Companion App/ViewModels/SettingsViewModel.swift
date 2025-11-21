@@ -13,5 +13,9 @@ import SwiftUI
 @MainActor
 class SettingsViewModel: ObservableObject {
     @Published var isDarkModeEnabled = false
-    @Published var isActiveStatusOn = false
+    @Published var notificationsEnabled = false
+    
+    
+    
+    
 }

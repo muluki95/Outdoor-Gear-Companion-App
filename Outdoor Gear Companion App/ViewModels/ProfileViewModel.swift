@@ -40,6 +40,8 @@ class ProfileViewModel: ObservableObject {
         self.profileImage = Image(uiImage: uiImage)
         
     }
+    
+    
 }
 
 

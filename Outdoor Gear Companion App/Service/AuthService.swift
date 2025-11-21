@@ -72,4 +72,35 @@ class AuthService {
         Task{ try await UserService.shared.fetchCurrentUser() }
         
     }
+    func deleteAccount() async {
+        guard let user = Auth.auth().currentUser else {
+            print("No logged in user.")
+            return
+        }
+        let uid = user.uid
+        
+        //delete firestore user document
+        do{
+            try await Firestore.firestore().collection("users").document(uid).delete()
+            print("User document deleted.")
+        } catch {
+            print("Failed to delete Firestore document.")
+            
+        }
+        
+        
+        //Delete Firebase Auth account
+        
+        do{
+            try await user.delete()
+            print("Auth account deleted.")
+            
+            self.userSession = nil
+            UserService.shared.currentUser = nil
+            
+        } catch {
+            print("Failed to delete account:\(error.localizedDescription)")
+            
+        }
+    }
 }

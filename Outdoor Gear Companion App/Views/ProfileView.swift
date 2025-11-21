@@ -6,6 +6,8 @@ struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
     @StateObject var settingsVM = SettingsViewModel()
     
+    @State private var showDeleteAlert = false
+    
     private var user: User? {
         return viewModel.currentUser
     }
@@ -46,12 +48,12 @@ struct ProfileView: View {
                             .onChange(of: settingsVM.isDarkModeEnabled, initial: false){oldValue, newValue in
                                 if let window = UIApplication.shared.connectedScenes
                                     .compactMap ({ $0 as? UIWindowScene})
-                                    .first? .windows.first{
+                                    .first? .windows.first {
                                     window.overrideUserInterfaceStyle = newValue ? .dark : .light
                                 }
                             }
-                        case .activeStatus:
-                            Toggle(isOn: $settingsVM.isActiveStatusOn){
+                        case .notificationsEnabled:
+                            Toggle(isOn: $settingsVM.notificationsEnabled){
                                 VStack(alignment: .leading){
                                     HStack{
                                         Image(systemName: option.imageName)
@@ -61,15 +63,15 @@ struct ProfileView: View {
                                         Text(option.title)
                                             .fontWeight(.semibold)
                                     }
-                                        Text(settingsVM.isActiveStatusOn ? "Active" : "Offline")
+                                        Text(settingsVM.notificationsEnabled ? "Active" : "Offline")
                                             .font(.subheadline)
-                                            .foregroundColor(settingsVM.isActiveStatusOn ? .green : .gray)
+                                            .foregroundColor(settingsVM.notificationsEnabled ? .green : .gray)
                                     
                                 }
                             }
-                            }
                         }
                     }
+                }
                 
                 Section {
                     Button("Log Out") {
@@ -78,9 +80,22 @@ struct ProfileView: View {
                     .foregroundStyle(.red)
                     
                     Button("Delete Account") {
-                        // implement delete
+                        showDeleteAlert = true
+                        
                     }
                     .foregroundStyle(.red)
+                    .alert("Delete Account", isPresented: $showDeleteAlert){
+                        Button("Delete", role: .destructive){
+                            Task {
+                                await AuthService.shared.deleteAccount()
+                            }
+                        }
+                        Button("Cancel", role: .cancel){}
+                        
+                    } message: {
+                        Text("Are you sure you want to delete your account?")
+                        
+                    }
                 }
             }
         }

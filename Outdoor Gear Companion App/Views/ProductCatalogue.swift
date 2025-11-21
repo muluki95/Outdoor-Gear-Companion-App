@@ -14,23 +14,28 @@ struct ProductCatalogue: View {
                let url = URL(string: urlString) {
                 KFImage(url)
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 450)
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 450)
+                    .clipped()
                     .cornerRadius(12)
+                    .padding(.horizontal, 16)
             }
             
             // Product Name
             Text(product.imageName)
                 .font(.headline)
                 .fontWeight(.semibold)
+                .padding(.horizontal, 16)
             
             
             RatingView(rating: product.rating)
+                .padding(.horizontal, 16)
             
             // Description
             Text(product.description)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
+                .padding(.horizontal, 16)
             
             // Specifications
             VStack(alignment: .leading, spacing: 8) {
@@ -48,6 +53,7 @@ struct ProductCatalogue: View {
                     }
                 }
             }
+            .padding(.horizontal, 16)
             
             // Add to Inventory Button
             if !viewModel.products.contains(where: {$0.id == product.id}) {
@@ -66,19 +72,22 @@ struct ProductCatalogue: View {
                         .background( Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(.horizontal, 16)
                 }
             } else {
                 Text(" Added to Inventory")
                     .foregroundColor(.green)
                     .font(.subheadline)
+                    .padding(.horizontal, 16)
             }
             if let errorMessage = errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .font(.caption)
+                    .padding(.horizontal, 16)
             }
         }
-        .padding()
+        .padding(.vertical,20)
     }
 }
 

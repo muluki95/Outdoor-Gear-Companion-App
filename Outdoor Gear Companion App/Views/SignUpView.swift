@@ -30,6 +30,7 @@ struct SignUpView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
                         .padding(.horizontal, 24)
+                        .autocapitalization(.none)
                     TextField("Enter your fullname",text: $viewModel.fullname)
                         .font(.subheadline)
                         .padding(12)
