@@ -41,6 +41,7 @@ struct AllInventoryList: View {
                 Section(header: Text("Gears")) {
                     ForEach(viewModel.gears) { gear in
                         gearRow(gear)
+                            .listRowBackground(Color.clear)
                     }
                 }
             }
@@ -53,6 +54,7 @@ struct AllInventoryList: View {
                 Section(header: Text("Products")) {
                     ForEach(viewModel.products) { product in
                         productRow(product)
+                            .listRowBackground(Color.clear)
                     }
                 }
             }
@@ -62,27 +64,39 @@ struct AllInventoryList: View {
     // MARK: - Row Builders
     
     private func gearRow(_ gear: Gear) -> some View {
-        AllInventory(gear: gear)
-            .swipeActions {
-                Button(role: .destructive) {
-                    itemsToDelete = gear
-                    showConfirmDelete = true
-                } label: {
-                    Label("Delete", systemImage: "trash")
+        VStack {
+            AllInventory(gear: gear)
+                .frame(maxWidth: .infinity)
+                .background(Color.clear)
+                .swipeActions {
+                    Button(role: .destructive) {
+                        itemsToDelete = gear
+                        showConfirmDelete = true
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
                 }
-            }
+        }
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            //.padding(.vertical, 8)
     }
     
     private func productRow(_ product: Product) -> some View {
-        ProductCatalogue(product: product)
-            .swipeActions {
-                Button(role: .destructive) {
-                    itemsToDelete = product
-                    showConfirmDelete = true
-                } label: {
-                    Label("Delete", systemImage: "trash")
+        VStack{
+            ProductCatalogue(product: product)
+                .frame(maxWidth : .infinity)
+                .background(Color.clear)
+                .swipeActions {
+                    Button(role: .destructive) {
+                        itemsToDelete = product
+                        showConfirmDelete = true
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
                 }
-            }
+        }
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        //.padding(.vertical, 8)
     }
 }
 
